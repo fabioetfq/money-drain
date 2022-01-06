@@ -1,5 +1,5 @@
 <ul>
   <% @items.each do |item| %>
-    <li><%= item.name %> - <%= item.category %></li>
+    <li><%= item.name %> - <%= item.category %> | <%= link_to 'Edit', edit_item_path(item) %> | <%= link_to 'Delete', item_path(item), method: :delete, data: { confirm: "Tem cereteza?" } %></li>
   <% end %>
 </ul>

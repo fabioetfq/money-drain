@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find, only: [:show, :edit, :update, :delete]
+  before_action :find, only: [:show, :edit, :update, :destroy]
   def index
     @items = Item.all
   end
@@ -25,12 +25,12 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
-    redirect_to root_path
+    redirect_to items_path
   end
 
-  def delete
+  def destroy
     @item.destroy
-    redirect_to root_path
+    redirect_to items_path
   end
 
   private
