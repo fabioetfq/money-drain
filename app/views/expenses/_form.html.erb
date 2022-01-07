@@ -1,0 +1,6 @@
+<%= simple_form_for @expense do |f| %>
+  <%= f.association :item, label: 'Item' %>
+  <%= f.input :name, label: 'Descrição' %>
+  <%= f.input :date, label: 'Data' %>
+  <%= f.submit 'Adicionar despesa', class: 'btn btn-success' %>
+<% end %>
