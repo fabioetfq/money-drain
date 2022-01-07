@@ -1,6 +1,8 @@
 <%= simple_form_for @expense do |f| %>
   <%= f.association :item, label: 'Item' %>
-  <%= f.input :name, label: 'Descrição' %>
-  <%= f.input :date, label: 'Data' %>
+  <%= f.input :name, label: 'Descrição', required: true %>
+  <%= f.input :date, label: 'Data', required: true %>
+  <%= f.input :provisioned, label: 'Provisionado?', hint: 'Marque se o gasto se repete ao longo dos meses.' %>
+  <%= f.input :parcel, label: 'Parcelas', hint: 'Indique quantas vezes o valor será debitado.', required: false %>
   <%= f.submit 'Adicionar despesa', class: 'btn btn-success' %>
 <% end %>
