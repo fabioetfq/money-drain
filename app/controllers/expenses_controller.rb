@@ -12,8 +12,9 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    @expense = Expense.new
-    if @expense.save
+    @expense = Expense.new(expense_params)
+    @expense.user_id = current_user.id
+    if @expense.save!
       redirect_to expense_path(@expense)
     else
       render :new
@@ -40,6 +41,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:name, :date, :value, :parcel, :item_id, :user_id)
+    params.require(:expense).permit(:name, :date, :value, :parcel, :credit_card, :provisioned, :item_id, :user_id)
   end
 end

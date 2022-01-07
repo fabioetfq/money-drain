@@ -1,0 +1,5 @@
+<ul>
+  <% @expenses.each do |expense| %>
+    <li><%= link_to expense.name, expense_path(expense) %> | <%= expense.date %></li>
+  <% end %>
+</ul>
