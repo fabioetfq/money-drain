@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 2022_01_07_000823) do
-=======
-ActiveRecord::Schema.define(version: 2022_01_06_224859) do
->>>>>>> 65c377549a401d7421c49521843fba584f36e4e9
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_224859) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "provisioned"
+    t.string "credit_card"
     t.index ["item_id"], name: "index_expenses_on_item_id"
     t.index ["user_id"], name: "index_expenses_on_user_id"
   end
